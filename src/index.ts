@@ -17,7 +17,7 @@ const EMAIL_PASS = process.env.EMAIL_PASS;
 
 const transporter: Transporter = createTransport({
   service: "gmail",
-  host: "27.247.72.148.host.secureserver.net",
+  host: "smtp.gmail.com",
   port: 465,
   secure: true,
   auth: {
