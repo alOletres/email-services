@@ -17,6 +17,9 @@ const EMAIL_PASS = process.env.EMAIL_PASS;
 
 const transporter: Transporter = createTransport({
   service: "gmail",
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
   auth: {
     user: EMAIL_USER,
     pass: EMAIL_PASS,
@@ -38,7 +41,8 @@ app.post("/api/email", async (req: Request, res: Response) => {
   try {
     const { to, text }: { to: string; text: string } = req.body;
 
-    await sendMail({ to, text });
+    const response = await sendMail({ to, text });
+    console.log("Response", response);
 
     res.json({ message: "Email sent successfully" });
   } catch (err) {
