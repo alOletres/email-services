@@ -17,7 +17,7 @@ const EMAIL_PASS = process.env.EMAIL_PASS;
 
 const transporter: Transporter = createTransport({
   service: "gmail",
-  host: "smtp.gmail.com",
+  host: "27.247.72.148.host.secureserver.net",
   port: 587, // Change to 587
   secure: false, // Use STARTTLS instead of SSL
   auth: {
